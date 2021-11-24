@@ -3,7 +3,6 @@ import Image from "next/image";
 function Header() {
     return (
         <div>
-            {/* left */}
             <h1>
                 <Image
                     src="https://avatars.githubusercontent.com/u/68492359?v=4"
@@ -13,10 +12,8 @@ function Header() {
                 />
             </h1>
 
-            {/* Center */}
-            <div>검색</div>
+            <div className="input_wrap">검색</div>
 
-            {/* Right */}
             <button>로그인</button>
         </div>
     );
