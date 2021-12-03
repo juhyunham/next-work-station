@@ -1,0 +1,9 @@
+.sidebar {
+    width: 200px;
+    padding: 0 30px;
+}
+
+.sidebar h2 {
+    font-size: 50px;
+    font-weight: bold;
+}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
+import styles from "./Chat.module.css";
+
 const socket = io.connect("http://localhost:8080");
 
 function Chat({ id }) {
@@ -24,16 +26,18 @@ function Chat({ id }) {
     };
 
     return (
-        <div className="chat-wrap">
-            <ul className="chat-box">
-                {chat.map(({ name, message }, index) => (
-                    <li className="chat-message" key={index}>
-                        <div>{name}</div>
-                        <div>{message}</div>
-                    </li>
-                ))}
-            </ul>
-            <div className="chat-handle-box">
+        <div className={styles.chat_wrap}>
+            <div className={styles.chat_area}>
+                <ul className={styles.chat_box}>
+                    {chat.map(({ name, message }, index) => (
+                        <li className={styles.chat_message} key={index}>
+                            <div className={styles.chat_name}>{name}</div>
+                            <div className={styles.chat_text}>{message}</div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className={styles.chat_handle_box}>
                 <input onChange={onChangeHandler}></input>
                 <button onClick={onClickHandler}>send</button>
             </div>
